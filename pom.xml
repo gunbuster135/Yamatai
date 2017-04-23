@@ -16,7 +16,7 @@
     <modules>
         <module>gateway</module>
         <module>discovery</module>
-        <module>userservice</module>
+        <module>user-service</module>
     </modules>
 
     <dependencyManagement>
@@ -42,19 +42,36 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
     </dependencies>
-
-    <repository>
-        <id>spring-milestones</id>
-        <name>Spring Milestones</name>
-        <url>https://repo.spring.io/milestone</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </repository>
-    <repository>
-        <id>spring-releases</id>
-        <name>Spring Releases</name>
-        <url>https://repo.spring.io/libs-release</url>
-    </repository>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.3.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
