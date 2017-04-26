@@ -1,0 +1,11 @@
+
+
+jwt:
+  secret: ThisIsASecret
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost/einharjar
+
+
+
